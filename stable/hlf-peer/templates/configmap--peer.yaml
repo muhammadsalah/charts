@@ -22,6 +22,11 @@ data:
   CORE_PEER_DISCOVERY_TOUCHPERIOD: 60s
   CORE_PEER_LOCALMSPID: {{ .Values.peer.mspID | quote }}
   CORE_PEER_MSPCONFIGPATH: /var/hyperledger/msp
+  #######################
+  # Chaincode listeners #
+  #######################
+  CORE_PEER_CHAINCODEADDRESS: {{ include "hlf-peer.fullname" . }}:7052
+  CORE_PEER_CHAINCODELISTENADDRESS: 0.0.0.0:7052
   ###########
   # Logging #
   ###########
